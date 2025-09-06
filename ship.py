@@ -16,7 +16,9 @@ class Ship:
                 self.cells.append((x, y1))
         else:
             raise ValueError("Ships must be horizontal or vertical (same x or same y).")
-        
+    def check_float(self):
+        if len(self.cells) < 1:
+            self.floating = False
     def __len__(self):
         return len(self.cells)
     def __str__(self):
@@ -24,8 +26,8 @@ class Ship:
 
 
 # demo
-newShip = Ship((0,4), (0,0))
-# print(newShip.c1, newShip.c2)  # -> (0, 0) (0, 4)
+# newShip = Ship((0,4), (0,0))
+# # print(newShip.c1, newShip.c2)  # -> (0, 0) (0, 4)
 # print(newShip.cells)           # -> [(0,0),(0,1),(0,2),(0,3),(0,4)]
 # print(len(newShip))
 # print(newShip)
