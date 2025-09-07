@@ -24,6 +24,10 @@ class Board:
 
     def __str__(self):
         return '\n'.join(' '.join(map(str, row)) for row in self.grid)
+    def ships_left(self):
+        if len(self.ships) < 1:
+            return False
+        return True
     
     def can_place_ship(self,ship):
         for cell in ship.cells:
@@ -67,16 +71,4 @@ class Board:
             print(f'Not Valid Move, {move}')
             return False
         
-        
-newShip = Ship((0,4), (0,0))
-newShip1 = Ship((9,9),(7,9))
-shipz = [newShip,newShip1]
-tester = Board(10,shipz)
-# print(tester.ships[1].cells)
-print(shipz[1].cells)
-tester.fire((9,9))
-tester.fire((3,9))
-tester.fire((8,9))
-tester.fire((7,9))
-# print(tester.valid_move((3,1)))     
-print(tester)
+
